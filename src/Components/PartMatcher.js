@@ -95,10 +95,21 @@ function partMatcher(allParts, requiredParts) {
     }, [])
 }
 
+let input1 = requiredParts1.split(',')
+let input2 = requiredParts2.split(',')
+let allRobots = []
+for (let i = 0; i < allParts.length; i++) {
+    const [name, part] = allParts[i].split('_')
+    allRobots.push(name)
+}
+
+allRobots = allRobots.filter((char, index) => {
+    return allRobots.indexOf(char) === index
+})
+
 function PartMatcher() {
 
-    let input1 = requiredParts1.split(',')
-    let input2 = requiredParts2.split(',')
+    
 
     return (
         <>
@@ -113,7 +124,7 @@ function PartMatcher() {
 
                 <div className='flex-item'>
                     <h2>All Robots</h2>
-                    {Object.keys(robots).map((x, index) => {
+                    {allRobots.map((x, index) => {
                         return <div>
                                 <span key={index}>{x}</span>
                             </div>
