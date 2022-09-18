@@ -108,9 +108,6 @@ allRobots = allRobots.filter((char, index) => {
 })
 
 function PartMatcher() {
-
-    
-
     return (
         <>
             <div className="flex-container">
